@@ -4,29 +4,21 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans
 	   					   http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-    <bean id="triangle" class="com.triangle.triangle">
-        <property name="points" >
-                <list>
-                    <ref bean="zeroPoint"/>
-                    <ref bean="point2"/>
-                    <ref bean="point3"/>
-                </list>
-        </property>
-
+    <bean id="triangle" class="com.triangle.triangle" autowire="byName">
 
     </bean>
 
-    <bean id="zeroPoint" class="com.triangle.point">
+    <bean id="pointA" class="com.triangle.point">
         <property name="x" value="0"/>
         <property name="y" value="0"/>
     </bean>
 
-    <bean id="point2" class="com.triangle.point">
+    <bean id="pointB" class="com.triangle.point">
         <property name="x" value="20"/>
         <property name="y" value="0"/>
     </bean>
 
-    <bean id="point3" class="com.triangle.point">
+    <bean id="pointC" class="com.triangle.point">
     <property name="x" value="30"/>
     <property name="y" value="0"/>
     </bean>
