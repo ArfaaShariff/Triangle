@@ -2,12 +2,22 @@ package com.triangle;
 
 
 import java.awt.*;
+import java.util.List;
 
 /**
  * Created by plank-arfaa on 9/2/2015.
  */
 public class triangle {
-    private point pointA;
+    private List<point>points;
+
+    public List<point> getPoints() {
+        return points;
+    }
+
+    public void setPoints(List<point> points) {
+        this.points = points;
+    }
+    /* private point pointA;
     private point pointB;
     private point pointC;
 
@@ -34,7 +44,7 @@ public class triangle {
     public void setPointC(point pointC) {
         this.pointC = pointC;
     }
-    /* private String type;
+     private String type;
     private int height;
 
     public int getHeight() {
@@ -61,9 +71,17 @@ public class triangle {
 
     public void draw() {
 
-        System.out.println("Point A = (" + getPointA().getX() + ", " + getPointA().getY() + ")");
+        for(point point : points){
+            System.out.println("Point = (" + point.getX() + ", " + point.getY() + ")");
+
+        }
+
+        /*System.out.println("Point A = (" + getPointA().getX() + ", " + getPointA().getY() + ")");
         System.out.println("Point B = (" + getPointB().getX() + ", " + getPointB().getY() + ")");
         System.out.println("Point C = (" + getPointC().getX() + ", " + getPointC().getY() + ")");
+    */
     }
+
+
 }
 
