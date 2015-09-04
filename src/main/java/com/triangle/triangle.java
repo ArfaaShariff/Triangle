@@ -3,6 +3,7 @@ package com.triangle;
 
 import org.springframework.beans.BeansException;
 import org.springframework.beans.factory.BeanNameAware;
+import org.springframework.beans.factory.DisposableBean;
 import org.springframework.beans.factory.InitializingBean;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.ApplicationContextAware;
@@ -13,7 +14,7 @@ import java.util.List;
 /**
  * Created by plank-arfaa on 9/2/2015.
  */
-public class triangle implements InitializingBean/*ApplicationContextAware,BeanNameAware*/{
+public class triangle implements InitializingBean,DisposableBean/*ApplicationContextAware,BeanNameAware*/{
    /*private List<point>points;
 
     public List<point> getPoints() {
@@ -107,5 +108,11 @@ public class triangle implements InitializingBean/*ApplicationContextAware,BeanN
         System.out.println("InitializingBean init method called for triangle");
 
     }
+    @Override
+    public void destroy() throws Exception {
+        System.out.println("DisposableBean destroy method called for triangle");
+
+    }
+
 }
 
