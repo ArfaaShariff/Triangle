@@ -3,6 +3,7 @@ package com.triangle;
 
 import org.springframework.beans.BeansException;
 import org.springframework.beans.factory.BeanNameAware;
+import org.springframework.beans.factory.InitializingBean;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.ApplicationContextAware;
 
@@ -12,8 +13,8 @@ import java.util.List;
 /**
  * Created by plank-arfaa on 9/2/2015.
  */
-public class triangle implements ApplicationContextAware,BeanNameAware{
-   /* private List<point>points;
+public class triangle implements InitializingBean/*ApplicationContextAware,BeanNameAware*/{
+   /*private List<point>points;
 
     public List<point> getPoints() {
         return points;
@@ -25,7 +26,7 @@ public class triangle implements ApplicationContextAware,BeanNameAware{
      private point pointA;
     private point pointB;
     private point pointC;
-    private ApplicationContext context=null;
+    //private ApplicationContext context=null;
 
     public point getPointB() {
         return pointB;
@@ -89,7 +90,7 @@ public class triangle implements ApplicationContextAware,BeanNameAware{
     }
 
 
-    @Override
+   /* @Override
     public void setApplicationContext(ApplicationContext context) throws BeansException
     {
         this.context=context;
@@ -98,6 +99,12 @@ public class triangle implements ApplicationContextAware,BeanNameAware{
     @Override
     public void setBeanName(String beanName) {
         System.out.println("Bean name is "+beanName);
+
+    }*/
+
+    @Override
+    public void afterPropertiesSet() throws Exception {
+        System.out.println("InitializingBean init method called for triangle");
 
     }
 }
